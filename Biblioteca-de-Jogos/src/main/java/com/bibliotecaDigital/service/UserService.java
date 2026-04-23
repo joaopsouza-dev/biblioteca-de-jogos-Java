@@ -1,5 +1,6 @@
 package com.bibliotecaDigital.service;
 
+import com.bibliotecaDigital.model.Game;
 import com.bibliotecaDigital.model.Menu;
 import com.bibliotecaDigital.model.User;
 
@@ -24,19 +25,57 @@ public class UserService {
 
             switch (option) {
                 case 1:
-                    System.out.println(user.toString());
+                    System.out.println(showUserInfos());
                     break;
 
                 case 2:
-                    user.Balance();
+                    viewBalance();
                     break;
 
 
                 case 3:
-                    user.deposit();
+                    deposit();
                     break;
             }
 
         }
+    }
+
+    //infos do usuario
+    public String showUserInfos() {
+        return "USER INFOS:\n" +
+                "Nome: " + user.getUsername() + "\n" +
+                "ID do usuário: " + user.getUserId() + "\n" +
+                "Saldo atual: " + String.format("%.3f", user.getBalance()) + "\n";
+    }
+
+    //depositar mais grana na conta para poder comprar mais jogos
+    public void deposit() {
+        double amount;
+        System.out.println("Digite o valor a ser depositado:\n");
+        amount = sc.nextDouble();
+        amount += user.getBalance();
+        user.setBalance(amount);
+        System.out.printf("Saldo atualizado com sucesso: %.2f \n", user.getBalance());
+
+    }
+
+    //ver o valor atual na conta
+    public void viewBalance() {
+        System.out.printf("Saldo disponível: %.2f\n", user.getBalance());
+    }
+
+    public void payGame(Game game) {
+
+        if (user.getBalance() > game.getPrice()) {
+            user.setBalance(user.getBalance() - game.getPrice());
+            System.out.printf("Jogo pago com sucesso! Saldo atual: %.2f\n", user.getBalance());
+        } else {
+            System.out.println("Não foi possível completar o pagamento! Verifique seu saldo atual");
+        }
+    }
+
+    public User getUser() {
+        return user;
     }
 }

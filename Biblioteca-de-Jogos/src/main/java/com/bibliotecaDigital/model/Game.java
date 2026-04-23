@@ -2,10 +2,10 @@ package com.bibliotecaDigital.model;
 
 public class Game {
 
-    private final String name;
-    private final double price;
-    private final int id;
-    private final String genre;
+    private String name;
+    private double price;
+    private int id;
+    private String genre;
 
     public Game(int id, String name, String genre, double price) {
         this.name = name;
@@ -14,7 +14,7 @@ public class Game {
         this.genre = genre;
     }
 
-    public void showList() {
+    public void showGame() {
         System.out.println("-----------------------------------");
         System.out.println("Nome: " + name);
         System.out.println("Gênero: " + genre);
@@ -24,6 +24,35 @@ public class Game {
 
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public double getPrice() {
+        return price;
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
 }

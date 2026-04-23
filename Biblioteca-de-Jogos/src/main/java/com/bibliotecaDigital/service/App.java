@@ -10,16 +10,18 @@ public class App {
     de objetos e também de métodos, o app faz tudo isso e na main eu só chamo o app.start
      */
 
-    Authenticator auth = new Authenticator();
-    Functions functions = new Functions();
-    Menu menu = new Menu();
-    Store store = new Store();
-    UserService userService;
+    private Authenticator auth = new Authenticator();
+    private Menu menu = new Menu();
+    private Catalog catalog = new Catalog();
+    private UserService userService;
+    private LibraryService libraryService;
     private User user;
+    private Library library;
 
     public App() {
         this.user = new User("João", 500.0, 120394);
         this.userService = new UserService(user);
+        this.libraryService = new LibraryService(userService, catalog);
     }
 
     public void start() {
@@ -33,28 +35,28 @@ public class App {
 
             switch (Useroption) {
 
-                case 1:
+                case 1: //outro menu para o usuario
                     userService.userInfo();
                     break;
 
-                case 2:
-                    this.store.showCatalog();
-                    this.functions.addGame();
+                case 2: //adiciona jogo
+                    this.catalog.showCatalog();
+                    this.libraryService.addGame();
                     break;
 
-                case 3:
+                case 3: //atualiza
                     this.auth.passwordMatch();
-                    this.functions.updateGame();
+                    libraryService.updateLibrary();
                     break;
 
 
-                case 4:
-                    this.functions.listGame();
+                case 4: //lista da biblioteca
+                    this.libraryService.showLibrary();
                     break;
 
-                case 5:
+                case 5: //remove
                     this.auth.passwordMatch();
-                    this.functions.removeGame();
+                    this.libraryService.removeGame();
                     break;
 
                 case 6:

@@ -33,4 +33,15 @@ public class Menu {
         return sc.nextInt();
     }
 
+    public void updateGame(Game game) {
+        System.out.println("\n================================================\n");
+        System.out.println("Oque você deseja alterar do jogo " + game.getName() + "?");
+        System.out.println("1. Nome do jogo");
+        System.out.println("2. ID do jogo");
+        System.out.println("3. Gênero do jogo");
+        System.out.println("4. Valor do jogo");
+        System.out.println("5. Voltar ao menu principal");
+        System.out.println("================================================\n");
+    }
+
 }
