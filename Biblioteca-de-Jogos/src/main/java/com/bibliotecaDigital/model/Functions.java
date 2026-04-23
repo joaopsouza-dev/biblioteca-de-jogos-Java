@@ -1,6 +1,7 @@
 package com.bibliotecaDigital.model;
 
 public class Functions {
+
     public void addGame() {
 
     }

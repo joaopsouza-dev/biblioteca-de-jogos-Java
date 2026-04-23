@@ -5,17 +5,13 @@ import java.util.Scanner;
 
 public class Authenticator {
     private String password;
-
-    public String getPassword() {
-        return password;
-    }
+    private final Scanner input = new Scanner(System.in);
 
     public void setPassword(String password) {
         this.password = password;
     }
 
     public void passwordMatch() {
-        Scanner input = new Scanner(System.in);
         System.out.print("Digite a senha: ");
         String userPassword = input.nextLine();
 

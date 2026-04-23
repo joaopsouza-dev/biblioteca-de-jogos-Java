@@ -3,26 +3,34 @@ package com.bibliotecaDigital.model;
 import java.util.Scanner;
 
 public class Menu {
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
 
 
     public void showMenu() {
 
-        System.out.println("\n============== MENU ==============");
-        System.out.println("Escolha a opção desejada:");
-        System.out.println("1. Adicionar Jogo");
-        System.out.println("2. Atualizar informações do jogo");
-        System.out.println("3. Listar Jogos na sua biblioteca");
-        System.out.println("4. Remover jogo da biblioteca");
-        System.out.println("5. Sair do menu");
-        System.out.println("==================================\n");
+        System.out.println("\n==================== MENU ====================");
+        System.out.println("Escolha a opção desejada:\n");
+        System.out.println("1. Opções do Usuário (infos / saldo / depósito)");
+        System.out.println("2. Adicionar Jogo");
+        System.out.println("3. Atualizar informações do jogo (admin)");
+        System.out.println("4. Listar Jogos na sua biblioteca");
+        System.out.println("5. Remover jogo da biblioteca (admin)");
+        System.out.println("6. Sair do menu");
+        System.out.println("==============================================\n");
+    }
+
+    public void userMenu() {
+        System.out.println("\n================ MENU DO USUÁRIO ================");
+        System.out.println("Escolha a opção desejada:\n");
+        System.out.println("1. Informações do usuário");
+        System.out.println("2. Saldo disponivel");
+        System.out.println("3. Depósito");
+        System.out.println("4. Voltar ao menu principal");
+        System.out.println("================================================\n");
     }
 
     public int option() {
         return sc.nextInt();
     }
 
-    public void password() {
-
-    }
 }

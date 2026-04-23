@@ -7,6 +7,7 @@ public class Library {
 
     private User user;
     private int gameQ;
-    private List<Game> games;
+
+    private List<Game> library;
 
 }
