@@ -2,6 +2,7 @@ package com.bibliotecaDigital.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Catalog {
 
@@ -39,4 +40,32 @@ public class Catalog {
         }
         return null;
     }
+
+    public void addGame(Game game) {
+        games.add(game);
+    }
+
+    public void removeGame() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Digite o id do jogo ou 0 para cancelar: ");
+        int id = sc.nextInt();
+
+        if (id == 0) {
+            return;
+        }
+
+        for (Game game : games) {
+
+            if (game.getId() == id) {
+                games.remove(game);
+                System.out.println("Jogo removido com sucesso!");
+                return;
+            }
+        }
+
+        System.out.println("Jogo não encontrado");
+    }
+
 }

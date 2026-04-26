@@ -36,10 +36,20 @@ public class UserService {
                 case 3:
                     deposit();
                     break;
+
+                case 4:
+                    System.out.println("Voltando ...");
+                    break;
+
+                default:
+                System.out.println("Opção inválida! Tente novamente.");
+                break;
             }
 
         }
     }
+
+
 
     //infos do usuario
     public String showUserInfos() {
@@ -67,7 +77,7 @@ public class UserService {
 
     public void payGame(Game game) {
 
-        if (user.getBalance() > game.getPrice()) {
+        if (user.getBalance() > game.getPrice()) { // Segunda verificação do saldo. Não é necessário, mas é uma camada a mais de proteção
             user.setBalance(user.getBalance() - game.getPrice());
             System.out.printf("Jogo pago com sucesso! Saldo atual: %.2f\n", user.getBalance());
         } else {

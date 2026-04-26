@@ -12,14 +12,16 @@ public class Authenticator {
     }
 
     public void passwordMatch() {
-        System.out.print("Digite a senha: ");
+        System.out.print("Digite a senha ou 0 para cancelar: ");
         String userPassword = input.nextLine();
-
+        if (userPassword.equals("0")) {
+            return;
+        }
         while (!password.equals(userPassword)) {
             System.out.println("Senha incorreta! Digite a senha novamente: ");
             userPassword = input.nextLine();
         }
 
-        System.out.println("Senha conferida com sucesso!");
+        System.out.println("Senha correta!");
     }
 }
