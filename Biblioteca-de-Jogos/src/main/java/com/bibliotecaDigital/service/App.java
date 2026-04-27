@@ -10,16 +10,15 @@ public class   App {
     de objetos e também de métodos, o app faz tudo isso e na main eu só chamo o app.start
      */
 
-    private Authenticator auth = new Authenticator();
-    private Menu menu = new Menu();
-    private Catalog catalog = new Catalog();
-    private UserService userService;
-    private LibraryService libraryService;
-    private User user;
-    private AdminService adminService;
+    private final Authenticator auth = new Authenticator();
+    private final Menu menu = new Menu();
+    private final Catalog catalog = new Catalog();
+    private final UserService userService;
+    private final LibraryService libraryService;
+    private final AdminService adminService;
 
     public App() {
-        this.user = new User("João", 500.0, 120394);
+        User user = new User("João", 500.0, 120394);
         this.userService = new UserService(user);
         this.libraryService = new LibraryService(userService, catalog);
         this.adminService = new AdminService(catalog, libraryService, auth);

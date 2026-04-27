@@ -6,7 +6,6 @@ public class User {
     private final String username;
     private final int userId;
     private double balance;
-    private Library library = new Library();
 
 
     //construtor
@@ -30,13 +29,5 @@ public class User {
 
     public void setBalance(double balance) {
         this.balance = balance;
-    }
-
-    public Library getLibrary() {
-        return library;
-    }
-
-    public void setLibrary(Library library) {
-        this.library = library;
     }
 }

@@ -33,18 +33,19 @@ public class AdminService {
             switch (option) {
 
                 case 1: // atualizar jogo da biblioteca
-                    auth.passwordMatch();
-                    libraryService.updateLibrary();
+                    if (auth.passwordMatch()) {
+                        libraryService.updateLibrary();
+                    }
                     break;
 
                 case 2: // remover jogo da biblioteca
-                    auth.passwordMatch();
-                    catalog.removeGame();
+                    if(auth.passwordMatch()) {
+                        catalog.removeGame();
+                    }
                     break;
 
                 case 3: // criar jogo no catálogo
-                    auth.passwordMatch();
-
+                    if(auth.passwordMatch()) {
 
                     System.out.print("Digite o nome do jogo: ");
                     String name = sc.nextLine();
@@ -55,6 +56,11 @@ public class AdminService {
                     System.out.print("Digite o ID do jogo: ");
                     int id = Integer.parseInt(sc.nextLine());
 
+                    while (catalog.existingGame(id)) {
+                        System.out.println("Digite o ID novamente: ");
+                        id = Integer.parseInt(sc.nextLine());
+                    }
+
                     System.out.print("Digite o gênero do jogo: ");
                     String genre = sc.nextLine();
 
@@ -62,6 +68,9 @@ public class AdminService {
                     catalog.addGame(game);
 
                     System.out.println("Jogo criado com sucesso!");
+                }
+
+
                     break;
 
                 case 4:

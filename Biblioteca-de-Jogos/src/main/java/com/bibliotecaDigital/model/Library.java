@@ -1,7 +1,5 @@
 package com.bibliotecaDigital.model;
 
-import com.bibliotecaDigital.service.App;
-
 import java.util.ArrayList;
 import java.util.List;
 

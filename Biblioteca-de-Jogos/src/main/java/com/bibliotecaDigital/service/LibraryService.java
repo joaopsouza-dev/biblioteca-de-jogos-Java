@@ -6,18 +6,16 @@ import com.bibliotecaDigital.model.Library;
 import com.bibliotecaDigital.model.Menu;
 
 import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 import java.util.Scanner;
 
 public class LibraryService {
     Library library;
-    private Scanner sc = new Scanner(System.in);
-    private UserService userService;
-    private Catalog catalog;
+    private final Scanner sc = new Scanner(System.in);
+    private final UserService userService;
+    private final Catalog catalog;
     Menu menu = new Menu();
 
     public LibraryService(UserService userService, Catalog catalog) {
@@ -122,11 +120,13 @@ public class LibraryService {
 
                 case 2: //id
                     System.out.println("Digite o ID novo ou 0 para cancelar: ");
-                    int identificador = sc.nextInt();
+                    System.out.println("Digite o ID novo ou 0 para cancelar:");
+                    int identificador = Integer.parseInt(sc.nextLine());
 
                     if (identificador == 0) {
                         return;
                     }
+
                     updJogo.setId(identificador);
                     System.out.println("ID atualizado com sucesso!");
                     break;

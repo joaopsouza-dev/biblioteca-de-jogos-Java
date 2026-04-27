@@ -19,7 +19,7 @@ public class Catalog {
         games.add(new Game(12938, "FC 26", "Esportes", 189.90));
         games.add(new Game(43109, "God Of War: Ragnarock", "Ação / História", 249.90));
         games.add(new Game(17498, "ResidentEvil 9: Requiem", "Terror / Suspense", 189.90));
-        games.add(new Game(16438, "Clair Obscur: Expedition 33", "Ação / História", 199.90));
+        games.add(new Game(12345, "Clair Obscur: Expedition 33", "Ação / História", 199.90));
         games.add(new Game(12093, "Minecraft: Java Edition", "Simulação", 79.90));
         games.add(new Game(76154, "Forza Horizon 5", "Simulação / Corrida", 349.90));
     }
@@ -66,6 +66,17 @@ public class Catalog {
         }
 
         System.out.println("Jogo não encontrado");
+    }
+
+    public boolean existingGame(int id) {
+
+        for (Game game : games) {
+            if (game.getId() == id) {
+                System.out.println("Já existe um jogo com esse ID!");
+                return true;
+            }
+        }
+        return false;
     }
 
 }
