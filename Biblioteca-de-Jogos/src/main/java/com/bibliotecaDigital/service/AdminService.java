@@ -38,7 +38,7 @@ public class AdminService {
                     }
                     break;
 
-                case 2: // remover jogo da biblioteca
+                case 2: // remover jogo da catalogo
                     if(auth.passwordMatch()) {
                         catalog.removeGame();
                     }
@@ -69,7 +69,6 @@ public class AdminService {
 
                     System.out.println("Jogo criado com sucesso!");
                 }
-
 
                     break;
 

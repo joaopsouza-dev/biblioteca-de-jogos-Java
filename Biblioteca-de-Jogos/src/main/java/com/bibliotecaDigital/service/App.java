@@ -3,7 +3,7 @@ package com.bibliotecaDigital.service;
 import com.bibliotecaDigital.model.*;
 
 
-public class   App {
+public class App {
 
     /*
     essa é quase como uma main secundária. para não encher a main de instâncias

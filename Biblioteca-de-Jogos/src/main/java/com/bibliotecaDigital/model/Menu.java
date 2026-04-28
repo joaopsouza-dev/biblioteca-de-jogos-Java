@@ -35,7 +35,7 @@ public class Menu {
         System.out.println("\n================ MENU DO ADMINISTRADOR ================");
         System.out.println("Escolha a opção desejada:\n");
         System.out.println("1. Atualizar infos do jogo");
-        System.out.println("2. Remover jogo da biblioteca do usuário");
+        System.out.println("2. Remover jogo da biblioteca");
         System.out.println("3. Criar jogo no catálogo");
         System.out.println("4. Voltar ao menu principal");
         System.out.println("=======================================================\n");

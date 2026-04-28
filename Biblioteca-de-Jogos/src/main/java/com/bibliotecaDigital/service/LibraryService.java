@@ -120,7 +120,6 @@ public class LibraryService {
 
                 case 2: //id
                     System.out.println("Digite o ID novo ou 0 para cancelar: ");
-                    System.out.println("Digite o ID novo ou 0 para cancelar:");
                     int identificador = Integer.parseInt(sc.nextLine());
 
                     if (identificador == 0) {
